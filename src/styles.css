@@ -1,0 +1,446 @@
+html {
+    background: url("./img/bg.svg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+    font-family:monospace;
+    font-size: 16px; 
+}
+
+body{
+    margin:0;
+    padding:0;
+    height: 200vh;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: 0.5fr 1.2fr 3fr 0.5fr;
+}
+
+header{
+    justify-self: flex-start;
+    width: 50vw;
+    height: 10vh;
+    background: #000000;
+    background: -moz-linear-gradient(-45deg, #000000 0%, #1E1E1E 48%, #000000 100%);
+    background: -webkit-linear-gradient(-45deg, #000000 0%, #1E1E1E 48%, #000000 100%);
+    background: linear-gradient(135deg, #000000 0%, #1E1E1E 48%, #000000 100%);
+    grid-row:1/2;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 2rem;
+
+
+    justify-content: center;
+    align-items: flex-start;
+    margin:1vw;
+    padding-left: 2rem;
+    padding-bottom:2vw;
+    color: #FAF3E0;
+    border-left:1rem groove #484848;
+    border-right:1rem groove #484848;
+
+    transition: all 0.4s ease;
+}
+header>h1{
+        transition: all 0.4s ease;
+}
+nav{
+    grid-area: 2/1/3/2;
+    background-color: #8b4c3993;
+    width: 18vw;
+    min-height: 5vh;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    gap:1vw;
+    align-items: center ;
+    box-sizing: border-box;
+    border:3px inset #1E1E1E;
+    transition: background-color 1s ease;
+
+}
+nav:hover{
+    border:3px inset #502b2b;
+    background-color: #8b4c391f;
+}
+
+nav>button{
+    background-color:#FAF3E0; 
+    font-weight: bold;
+    border-radius: 0.8rem;
+    border:transparent;
+    height: 80%;
+}
+
+nav>button:hover{
+background-color:#5e342716; 
+border:transparent;
+color:#FAF3E0; 
+cursor: pointer;
+text-decoration: underline;
+}
+
+#logo{
+        grid-area: 1/2/2/3;
+}
+
+#content{
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: column;
+}
+
+body.menu #content{
+    grid-row: 2/4;
+}
+body.about #content{
+    grid-row: 2/4;
+}
+
+
+#image-galleria{
+    grid-row: 2/3;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    grid-auto-columns: 17%;
+    overscroll-behavior-inline: contain;
+    gap:1rem;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 1rem;
+    background-color: rgba(0,0,0,0.5);
+        overflow-y: hidden;
+}
+
+#image-galleria > div {
+    scroll-snap-align: start;
+    margin-left:1rem;
+    display: flex;
+    align-items: center;
+
+}
+
+#image-galleria >div > img {
+    inline-size: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+
+}
+
+
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  height: 10px;         /* Horizontal scrollbar height */
+  width: 10px;          /* Vertical scrollbar width */
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #caa06d, #6a3e36);
+  border-radius: 10px;
+  border: 2px solid #2d1b16;
+}
+
+/* Scrollbar Track Background */
+::-webkit-scrollbar-track {
+  background-color: #1a0e0a;
+  border-radius: 10px;
+}
+
+/* Optional: On hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #e6b98a, #814d44);
+}
+
+.textBar,.textBar2{
+    width: 99.218vw;
+    height: 12vh;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FAF3E0;
+    font-size: min(1.6rem,2.2vw);
+    letter-spacing: 1rem;;
+}
+.textBar2{
+    margin-top: 1rem;
+    height: 14vh;
+}
+
+#desc,#desc2{
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.65);
+    width: 65%;
+    height: 50vh;
+    margin:1rem;
+    text-align: left;
+    color:#FAF3E0;
+    padding-top:2rem;
+    padding-right:17vw;
+    padding-left:1vw;
+    line-height: 3rem;
+    font-size:min(1.4rem,2vw);
+    display: flex;
+    border-radius: 2rem;
+    overflow-y: hidden;
+    transition: all 0.4s ease;
+}
+
+#desc:hover, #desc2:hover {
+    background-color: rgba(0,0,0,0.85);
+    box-shadow: 10px 10px 10px black;
+}
+
+#desc{
+    text-align: left;
+    padding-left:17vw;
+    padding-right:1vw;
+    height: 40vh;
+}
+
+
+#desc2{
+    align-self: flex-end;
+    height: 35vh;
+}
+
+
+@media screen and (max-width: 768px) {
+    #desc{
+        overflow-y: scroll;
+    }
+  #image-galleria {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets/phones */
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+}
+
+.footer{
+    grid-row: 4/5;
+    justify-self: center;
+    display: flex;
+    background-color: rgba(0,0,0,0.85);
+    height: 10vh;
+    width: 100%;
+    align-self: flex-end;
+    color: #FAF3E0;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1rem groove transparent ;
+    border-top: 1rem groove rgba(0,0,0,0.5) ;
+    transition: all 0.2s ease;
+}
+
+.footer:hover{
+    background-color: #1E1E1E;
+}
+
+.overlay{
+position: fixed;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.5);
+display: none;
+}
+
+#image-galleria > div > img.zoomed {
+  position: fixed;
+  object-fit: contain;
+  max-width: 40%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4);
+  transition: transform 0.3s ease, top 0.3s ease, left 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Menu part */
+
+#menu1{
+    width: 60vw;
+    height: 80vw;
+    transition: all 1s ease;
+}
+
+#menu1:hover{
+box-shadow: 10px 10px 10px black;
+}
+
+#imageCont{
+    display: flex;
+    justify-content: center;
+}
+
+
+#tit{
+    text-align: center;
+    background-color:#FAF3E0 ;
+    height: 4vw;
+    letter-spacing: 0.3rem;
+    color:#1E1E1E;
+}
+
+/* shiftin boiii */
+
+body.menu header{
+    transform: translateX(22vw);
+    transition: all 0.4s ease;
+}
+
+body.menu header>h1{
+    transform: translateX(20vw);
+    transition: all 0.4s ease;
+}
+
+
+body.menu header nav{
+    transform: translateX(16vw);
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+
+/* Menu Part Over */
+
+
+/* some additionalities */
+
+body.home #home{
+    text-decoration: underline;
+    background-color: transparent;
+    color:#FAF3E0 ;
+}
+
+body.menu #menu{
+    text-decoration: underline;
+    background-color: transparent;
+    color:#FAF3E0 ;
+}
+
+body.about #about{
+    text-decoration: underline;
+    background-color: transparent;
+    color:#FAF3E0 ;
+}
+
+/* some additionalities Over */
+
+/* About page */
+
+
+/* shiftin boiii */
+
+body.about header{
+    transform: translateX(43.6vw);
+    transition: all 0.4s ease;
+}
+
+body.about header>h1{
+    transform: translateX(38.7vw);
+    transition: all 0.4s ease;
+}
+
+body.about header nav{
+    transform: translateX(30.5vw);
+    justify-content: flex-end;
+    transition: all 0.4s ease;
+}
+
+#hed{
+    font-family: "Times New Roman";
+    background-color:#FAF3E0  ;
+    width: max-content;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-decoration: underline;
+}
+
+#aboutDesc,#aboutDesc2,#aboutDesc3{
+    background-color: rgba(0, 0, 0, 0.75);
+    color:#faf3e0da;
+    font-size:min(1.6rem,2vw);
+    padding:2rem;
+    padding-right:30rem;
+    line-height: 3rem;
+    letter-spacing: 0.3rem;;
+    font-family: 'Times New Roman', Times, serif;
+}
+#aboutDesc2{
+    text-align: left;
+       padding-left:30rem;
+       padding-right:3.3rem;
+}
+
+#aboutDesc::first-letter,#aboutDesc2::first-letter,#aboutDesc3::first-letter{
+    font-size:min(3.4rem,3vw); ;
+}
+
+
+#aboutDesc:hover, #aboutDesc2:hover, #aboutDesc3:hover{
+    color:#FAF3E0;
+}
+
+/* contact form */
+
+#contForm{
+    display: flex;
+    flex-direction: column;
+    margin-left: 35vw;
+    margin-top:4rem;
+    width: 30%;
+    background-color: #FAF3E0;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-left:2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    align-items: flex-start;
+    border-radius: 1rem;
+    transition: all 0.4s ease;
+    height: 80vh;
+
+}
+#contForm:hover{
+    box-shadow: 10px 10px 10px black;
+}
+
+#contForm> label {
+    font-size: 1.1rem;
+    margin-top: 0.6rem;
+}
+
+#contForm > input:invalid{
+   color:red;
+}
+#contForm > input{
+    border-radius: 0.3rem;
+}
+
+#message{
+    width: 100%;
+    resize:horizontal;
+}
+
+#contForm > button{
+    justify-self: flex-end;
+}
+
+
+
+
+
+/* About page Over*/

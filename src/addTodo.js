@@ -27,7 +27,7 @@ function addTodo(todo, pushToItems = true) {
     title.textContent = todo.title;
     desc.textContent = todo.description;
     duedate.textContent = todo.duedate;
-    priority.textContent = todo.priority;
+    priority.textContent = `Priority: ${todo.priority}`;
     checked.textContent = todo.checked;
 
     contain.appendChild(title);

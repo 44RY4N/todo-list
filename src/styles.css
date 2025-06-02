@@ -137,27 +137,44 @@ white-space: nowrap;
 
 
 .todoContainer{
-    padding:1rem;
+    padding:0.6rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     background: url(./img/paper.jpg);
-    filter: saturate();
+    background-size: cover;
+    background-position: -4vw;
     gap:1rem;
+}
+
+.todoTitle{
 }
 
 .todoDesc{
     align-self: flex-start;
+    background-color: white;
+    padding: 0.3rem;
+    border-radius: 0.7rem;
 }
 
 .todoDuedate{
-    align-self: flex-start;    
+    align-self: flex-start;
+    background-color: white;
+    padding: 0.3rem;
+    width: max-content;    
+    border-radius: 0.7rem;
 }
 
 .todoPriority{
-    align-self: flex-start;    
+    align-self: flex-start;
+    padding: 0.3rem;
+    background-color: white;
+    border-radius: 0.7rem;    
 }
 
 .todoChecked{
-    align-self: flex-start;    
+    align-self: flex-start;
+    padding: 0.3rem;
+    background-color: white;
+    border-radius: 0.7rem;    
 }

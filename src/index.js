@@ -14,7 +14,7 @@ header.appendChild(title);
 
 //default initialization
 let defaultProject =  createProject("","");
-let defaultTodo = createTodo("","","","","");
+let defaultTodo = createTodo("","example project","","","");
 defaultProject.add(defaultTodo);
 
 console.log("all projects in index")
@@ -29,7 +29,7 @@ newProjectButton.addEventListener("click",popProject);
 const newTodoButton = document.querySelector("#newtodo");
 newTodoButton.addEventListener("click",popTodo)
 
-
+// default load up
 const defPro = document.querySelector("#projectContainer div");
 defPro.click();
 

@@ -1,6 +1,8 @@
 import {addProject} from "./addProject.js";
 import { state } from "./projectHandler.js";
 
+// Creates project structure and 
+
 class Project {
     static copy = 1;
     static id = 1;

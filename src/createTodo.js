@@ -1,12 +1,14 @@
 import { addTodo } from "./addTodo";
 class Todo {
     static copy = 1;
+    static id = 1;
     constructor(title, description, duedate, priority, checked){
         this.title = title || `Note#${Todo.copy++}`;
         this.description = description || "no description";
         this.duedate = duedate || "no duedate";
         this.priority = priority || 0;
         this.checked = checked || false;
+        this.id = Todo.id++;
     }
     showTodo(){
         todoShower(this);

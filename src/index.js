@@ -3,7 +3,9 @@ import {popProject} from "./popProject.js";
 import {popTodo} from "./popTodo.js";
 import { createProject } from "./createProject.js";
 import { createTodo } from "./createTodo.js";
-
+import {showTodayTodos} from "./todayFilter.js";
+import {showWeeklyTodos} from "./weeklyFilter.js";
+import { displayAllTodos } from "./allFilter.js";
 const header = document.querySelector("header");
 
 
@@ -28,6 +30,22 @@ newProjectButton.addEventListener("click",popProject);
 
 const newTodoButton = document.querySelector("#newtodo");
 newTodoButton.addEventListener("click",popTodo)
+
+//today filter 
+
+const todayButton = document.querySelector("#daily");
+todayButton.addEventListener("click",showTodayTodos);
+
+//weekly filter 
+
+const weeklyButton = document.querySelector("#weekly");
+weeklyButton.addEventListener("click",showWeeklyTodos);
+
+//All filter 
+
+const allButton = document.querySelector("#all");
+allButton.addEventListener("click",displayAllTodos);
+
 
 // default load up
 const defPro = document.querySelector("#projectContainer div");

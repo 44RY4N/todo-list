@@ -216,6 +216,7 @@ border:4px double rgb(0, 255, 0);
 white-space: normal;
   overflow-wrap: break-word;
   text-align: left;
+  margin-top:-0.8rem;
 }
 
 .todoDesc:hover{

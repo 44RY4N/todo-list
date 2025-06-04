@@ -15,7 +15,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows:16vh 100% ;
-    height: max-content;
+    height: 100%;
     overflow: none;
 }
 
@@ -28,6 +28,7 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 2;
+    font-size: min(1.1rem, 1.8vw);
 }
 
 #popPro,#popTo{
@@ -114,6 +115,7 @@ nav{
     max-width: 20vw;
     background-color: rgba(0,0,0,0.8);
     gap:2rem;
+    font-size: min(1.1rem, 1.8vw);
 }
 
 nav>button{
@@ -166,6 +168,7 @@ border:4px double rgb(0, 255, 0);
     padding:1rem;
     gap:1rem;
     color:white;
+    font-size: min(1.1rem, 1.8vw);
 }
 
 .todoContainer.incomplete:hover {

@@ -167,7 +167,7 @@ border:4px double rgb(0, 255, 0);
     padding:1rem;
     gap:1rem;
     color:white;
-    font-size: min(1.1rem, 1.8vw);
+    font-size: min(1rem, 1.8vw);
 }
 
 .todoContainer.incomplete:hover {

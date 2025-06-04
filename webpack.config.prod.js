@@ -5,7 +5,7 @@ const common = require("./webpack.config.common.js");
 module.exports = merge(common, {
   mode: "production",
   output: {
-    publicPath: './',
+    publicPath: "./",
   },
   module: {
     rules: [

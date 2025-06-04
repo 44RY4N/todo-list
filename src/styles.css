@@ -1,255 +1,271 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-    background: url("./img/bg.svg");
-    height: 100%;
-    width: 100%;
-    font-size: 32px;
+html {
+  background: url("./img/bg.svg");
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
 }
 
-body{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows:16vh 100% ;
-    height: max-content;
-    overflow: none;
+body {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 16vh 100%;
+  height: max-content;
+  overflow: none;
 }
 
-#overlay{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
+#overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  font-size: min(1.1rem, 1.8vw);
 }
 
-#popPro,#popTo{
-    background-color: #001829;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    height: 30vh;
-    width: 30vw;
-    border-right: 0.3rem double #297EA6;
-    border-bottom: 0.3rem double #297EA6;
-    border-left: 0.3rem groove #297EA6;
-    border-top: 0.3rem groove #297EA6;
-    justify-content: center;
-    align-items: center;
-    gap:1rem;
+#popPro,
+#popTo {
+  background-color: #001829;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 30vh;
+  width: 30vw;
+  border-right: 0.3rem double #297ea6;
+  border-bottom: 0.3rem double #297ea6;
+  border-left: 0.3rem groove #297ea6;
+  border-top: 0.3rem groove #297ea6;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-#popTo{
-    height: 40vh;
+#popTo {
+  height: 40vh;
 }
 
-#popPro > *,#popTo > *{
-    background-color: #4a8aa8;
-    width: 70%;
-    border-radius: 1rem;
-    transition: all 0.4s ease;
+#popPro > *,
+#popTo > * {
+  background-color: #4a8aa8;
+  width: 70%;
+  border-radius: 1rem;
+  transition: all 0.4s ease;
 }
 
-#popPro > input:hover, #popTo > input:hover{
-    background-color: #297EA6;
+#popPro > input:hover,
+#popTo > input:hover {
+  background-color: #297ea6;
 }
 
-#popPro > textarea:hover, #popTo > textarea:hover{
-    background-color: #297EA6;
+#popPro > textarea:hover,
+#popTo > textarea:hover {
+  background-color: #297ea6;
 }
 
-
-#popPro > input, #popTo > input{
-    height: 2rem;
-    padding-left: 0.3rem;
-     overflow: ellipsis;
+#popPro > input,
+#popTo > input {
+  height: 2rem;
+  padding-left: 0.3rem;
+  overflow: ellipsis;
 }
-#popPro > textarea, #popTo > textarea{
-    height: 6rem;
-    resize: none;
-    padding-left: 0.3rem;
-    padding-top: 0.2rem;
-   
-}
-
-#popPro > button, #popTo > button{
-    width: 20%;
-    height:2rem ;
-    font-weight: bold;
-    background-color: #FFD66B;
-    margin-right:14rem;
+#popPro > textarea,
+#popTo > textarea {
+  height: 6rem;
+  resize: none;
+  padding-left: 0.3rem;
+  padding-top: 0.2rem;
 }
 
-#popPro > button:hover, #popTo > button:hover{
-    width: 20%;
-    height:2rem ;
-    background-color: white;
-
-    color: #FFD66B;
+#popPro > button,
+#popTo > button {
+  width: 20%;
+  height: 2rem;
+  font-weight: bold;
+  background-color: #ffd66b;
+  margin-right: 14rem;
 }
 
-header{
-    grid-column: 2/3;
-    grid-row: 1/2;
-    min-height: 10vh;
-    transition: all 0.4s ease;
-    background-color: #297EA6;
-    border-bottom: 1rem #001829;
-    border-bottom-style: double;
+#popPro > button:hover,
+#popTo > button:hover {
+  width: 20%;
+  height: 2rem;
+  background-color: white;
+
+  color: #ffd66b;
 }
 
-nav{
-    grid-row: 1/3;
-    grid-column: 1/2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 20vw;
-    background-color: rgba(0,0,0,0.8);
-    gap:2rem;
+header {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  min-height: 10vh;
+  transition: all 0.4s ease;
+  background-color: #297ea6;
+  border-bottom: 1rem #001829;
+  border-bottom-style: double;
 }
 
-nav>button{
-    width: 6vw;
+nav {
+  grid-row: 1/3;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 20vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  gap: 2rem;
+  font-size: min(1.1rem, 1.8vw);
 }
 
+nav > button {
+  width: 6vw;
+}
 
-#projectContainer{
-    width: 10vw;
-    height: 30vh;
-    background-color: #297EA6;
-    border: 5px double black;
-    margin-top: 2rem;
-    overflow-y: scroll;
-    padding:0.3rem;
+#projectContainer {
+  width: 10vw;
+  height: 30vh;
+  background-color: #297ea6;
+  border: 5px double black;
+  margin-top: 2rem;
+  overflow-y: scroll;
+  padding: 0.3rem;
 }
 
 #projectContainer > div {
-white-space: nowrap;         
-  overflow: hidden; 
-  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   max-width: 100%;
-  color:white;
-  margin-bottom:0.4rem;
-  border-bottom:2px solid #62a3c1;
+  color: white;
+  margin-bottom: 0.4rem;
+  border-bottom: 2px solid #62a3c1;
   transition: all 0.4s ease;
-  padding-left:0.4rem;
+  padding-left: 0.4rem;
   border-radius: 1rem;
 }
-#projectContainer > div:hover{
-    cursor:pointer;
-    background-color: #62a3c1;
+#projectContainer > div:hover {
+  cursor: pointer;
+  background-color: #62a3c1;
 }
-.todoContainer.high{
-border:4px double red;
+.todoContainer.high {
+  border: 4px double red;
 }
 
-.todoContainer.med{
-border:4px double blue;
+.todoContainer.med {
+  border: 4px double blue;
 }
-.todoContainer.low{
-border:4px double rgb(0, 255, 0);
+.todoContainer.low {
+  border: 4px double rgb(0, 255, 0);
 }
 /* todo container */
 
-#content{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    padding:1rem;
-    gap:1rem;
-    color:white;
+#content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 1rem;
+  gap: 1rem;
+  color: white;
+  font-size: min(1.1rem, 1.8vw);
 }
 
 .todoContainer.incomplete:hover {
-    animation: light-wiggle 0.3s ease;
+  animation: light-wiggle 0.3s ease;
 }
 
 @keyframes light-wiggle {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(-0.5deg); }
-  50% { transform: rotate(0.5deg); }
-  75% { transform: rotate(-0.25deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-0.5deg);
+  }
+  50% {
+    transform: rotate(0.5deg);
+  }
+  75% {
+    transform: rotate(-0.25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-
-.todoContainer{
-    color:black;
-    padding:0.6rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    background: url(./img/paper.jpg);
-    background-size: cover;
-    background-position: -4vw;
-    gap:1rem;
-    width: 18vw;
-    height: 16vw;
-    filter: contrast(1.1);
+.todoContainer {
+  color: black;
+  padding: 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: url(./img/paper.jpg);
+  background-size: cover;
+  background-position: -4vw;
+  gap: 1rem;
+  width: 18vw;
+  height: 16vw;
+  filter: contrast(1.1);
 }
 
-.todoTitle{
-    background-color: #62a3c1;
-    border-bottom: 5px double white;
+.todoTitle {
+  background-color: #62a3c1;
+  border-bottom: 5px double white;
 }
 
-.todoDesc{
-    align-self: flex-start;
-    background-color: white;
-    padding: 0.3rem;
-    border-radius: 0.7rem;
+.todoDesc {
+  align-self: flex-start;
+  background-color: white;
+  padding: 0.3rem;
+  border-radius: 0.7rem;
 
-    max-height: 5.2vh;
-    max-width: 14vw;
-            
-    overflow: hidden; 
-    text-overflow:ellipsis;
-    word-break: break-word;      /* Or break-all as a fallback */
+  max-height: 5.2vh;
+  max-width: 14vw;
 
-white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word; /* Or break-all as a fallback */
+
+  white-space: normal;
   overflow-wrap: break-word;
   text-align: left;
-  margin-top:-0.8rem;
+  margin-top: -0.8rem;
 }
 
-.todoDesc:hover{
-    cursor: pointer;
+.todoDesc:hover {
+  cursor: pointer;
 }
 
-.todoDuedate{
-    align-self: flex-start;
-    background-color: white;
-    padding: 0.3rem;
-    width: max-content;    
-    border-radius: 0.7rem;
+.todoDuedate {
+  align-self: flex-start;
+  background-color: white;
+  padding: 0.3rem;
+  width: max-content;
+  border-radius: 0.7rem;
 }
 
-.todoPriority{
-    align-self: flex-start;
-    padding: 0.3rem;
-    background-color: white;
-    border-radius: 0.7rem;    
+.todoPriority {
+  align-self: flex-start;
+  padding: 0.3rem;
+  background-color: white;
+  border-radius: 0.7rem;
 }
 
-.todoChecked{
-    align-self: flex-start;
-    padding: 0.3rem;
-    background-color: white;
-    border-radius: 0.7rem;    
+.todoChecked {
+  align-self: flex-start;
+  padding: 0.3rem;
+  background-color: white;
+  border-radius: 0.7rem;
 }
 
-.todoChecked:hover{
-    cursor: pointer;
+.todoChecked:hover {
+  cursor: pointer;
 }
-
 
 /* CSS */
 nav > button {
@@ -261,7 +277,17 @@ nav > button {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family:
+    Roobert,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -271,7 +297,7 @@ nav > button {
   outline: none;
   text-align: center;
   text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -279,36 +305,34 @@ nav > button {
   will-change: transform;
 }
 
-
 nav > button:hover {
-  border: 2px solid #FFD66B;
+  border: 2px solid #ffd66b;
   background-color: #000000;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-nav>button:active {
+nav > button:active {
   box-shadow: none;
   transform: translateY(0);
 }
 
-#project{
-    margin-top:2rem;
+#project {
+  margin-top: 2rem;
 }
 
-#all{
-    margin-top:1rem;
+#all {
+  margin-top: 1rem;
 }
-
 
 #projectContainer {
-  --sb-track-color: #232E33;
+  --sb-track-color: #232e33;
   --sb-thumb-color: white;
   --sb-size: 6px;
 }
 
 #projectContainer::-webkit-scrollbar {
-  width: var(--sb-size)
+  width: var(--sb-size);
 }
 
 #projectContainer::-webkit-scrollbar-track {
@@ -323,57 +347,56 @@ nav>button:active {
 }
 
 @supports not selector(::-webkit-scrollbar) {
- #projectContainer {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
+  #projectContainer {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }
 
-#fulldesc{
-    width: 30vw;
-    height: 30vh;
-    background-color: rgb(231, 231, 231);
-    border-radius: 4rem;
-    border:1.6rem solid white;
-    padding:0.4rem;
-    padding-top:0.8rem;
-    word-break: break-all;
-    transition: all 0.6s ease;
+#fulldesc {
+  width: 30vw;
+  height: 30vh;
+  background-color: rgb(231, 231, 231);
+  border-radius: 4rem;
+  border: 1.6rem solid white;
+  padding: 0.4rem;
+  padding-top: 0.8rem;
+  word-break: break-all;
+  transition: all 0.6s ease;
 }
 
-#fulldesc:hover{
-     background-color: white;
-     border-color: rgb(231, 231, 231);
+#fulldesc:hover {
+  background-color: white;
+  border-color: rgb(231, 231, 231);
 }
 
 .todoContainer.complete {
-    text-decoration: line-through;
-    filter:grayscale(100)
+  text-decoration: line-through;
+  filter: grayscale(100);
 }
 
-#opts{
-    position: fixed;
-    font-size: 10px;
-    display: flex;
-    bottom:4px;
+#opts {
+  position: fixed;
+  font-size: 10px;
+  display: flex;
+  bottom: 4px;
 }
 
-#del{
-    margin-left: 3.6rem;
-    transform: scale(1.3);
+#del {
+  margin-left: 3.6rem;
+  transform: scale(1.3);
 }
 
-.todoContainer.incomplete #del:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+.todoContainer.incomplete #del:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-.todoContainer.incomplete #edit:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+.todoContainer.incomplete #edit:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-#edit{
-    margin-left:0.6rem;
-    transform: scale(1.3);
+#edit {
+  margin-left: 0.6rem;
+  transform: scale(1.3);
 }

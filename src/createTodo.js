@@ -29,6 +29,10 @@ function createTodo(title, description, duedate, priority, checked) {
   return newTodo;
 }
 
+createTodo.setIdCounter = function(counter) {
+  Todo.id = Math.max(Todo.id, counter);
+};
+
 function todoShower(project) {
   console.log(`Todo Title => ${project.title}`);
   console.log(`Todo description => ${project.description}`);

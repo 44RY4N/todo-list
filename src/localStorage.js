@@ -38,6 +38,12 @@ const Storage = {
                     project.add(todo);
                 });
 
+                // Update Project.id and Todo.id counters
+            const maxProjectId = Math.max(0, ...projects.map(p => p.id));
+            const maxTodoId = Math.max(0, ...projects.flatMap(p => p.items.map(t => t.id)));
+            createProject.setIdCounter(maxProjectId + 1);
+            createTodo.setIdCounter(maxTodoId + 1);
+
                 return project;
             });
         } catch (error) {

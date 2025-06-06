@@ -43,4 +43,8 @@ function createProject(title, desc) {
   return newProject;
 }
 
+createProject.setIdCounter = function(counter) {
+  Project.id = Math.max(Project.id, counter);
+};
+
 export { createProject };

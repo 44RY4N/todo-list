@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 html {
-  background: url("./img/bg.svg");
+  background: url("./img/bg.svg") no-repeat center center fixed;
+  background-size:cover;
   height: 100%;
   width: 100%;
   font-size: 16px;
@@ -30,33 +30,6 @@ body {
   align-items: center;
   z-index: 2;
   font-size: min(1.1rem, 1.8vw);
-=======
-html{
-    background: url("./img/bg.svg");
-    height: 100%;
-    width: 100%;
-    font-size: 16px;
-}
-
-body{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows:16vh 100% ;
-    height: 100%;
-    overflow: none;
-}
-
-#overlay{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    font-size: min(1.1rem, 1.8vw);
->>>>>>> ba3ec44ca89253717541430b2b8392d6261a9c1f
 }
 
 #popPro,
@@ -140,7 +113,6 @@ header {
   border-bottom-style: double;
 }
 
-<<<<<<< HEAD
 nav {
   grid-row: 1/3;
   grid-column: 1/2;
@@ -151,18 +123,6 @@ nav {
   background-color: rgba(0, 0, 0, 0.8);
   gap: 2rem;
   font-size: min(1.1rem, 1.8vw);
-=======
-nav{
-    grid-row: 1/3;
-    grid-column: 1/2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 20vw;
-    background-color: rgba(0,0,0,0.8);
-    gap:2rem;
-    font-size: min(1.1rem, 1.8vw);
->>>>>>> ba3ec44ca89253717541430b2b8392d6261a9c1f
 }
 
 nav > button {
@@ -207,7 +167,6 @@ nav > button {
 }
 /* todo container */
 
-<<<<<<< HEAD
 #content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -216,16 +175,6 @@ nav > button {
   gap: 1rem;
   color: white;
   font-size: min(1.1rem, 1.8vw);
-=======
-#content{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    padding:1rem;
-    gap:1rem;
-    color:white;
-    font-size: min(1rem, 1.8vw);
->>>>>>> ba3ec44ca89253717541430b2b8392d6261a9c1f
 }
 
 .todoContainer.incomplete:hover {

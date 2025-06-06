@@ -5,7 +5,8 @@
 }
 
 html{
-    background: url(./5d03d81f1d0048cd104c.svg);
+    background: url(./5d03d81f1d0048cd104c.svg)no-repeat center center fixed;
+    background-size:cover;
     height: 100%;
     width: 100%;
     font-size: 16px;

@@ -6,6 +6,10 @@ import { createTodo } from "./createTodo.js";
 import { showTodayTodos } from "./todayFilter.js";
 import { showWeeklyTodos } from "./weeklyFilter.js";
 import { displayAllTodos } from "./allFilter.js";
+import {Storage} from './localStorage.js';
+import { state } from "./projectHandler.js";
+import {deleteProject} from "./delPro.js";
+
 const header = document.querySelector("header");
 
 // creating title
@@ -13,11 +17,15 @@ const title = document.createElement("h1");
 title.textContent = "Your Digital Todo-List";
 header.appendChild(title);
 
-//default initialization
-let defaultProject = createProject("", "");
-let defaultTodo = createTodo("", "example project", "", "", "");
-defaultProject.add(defaultTodo);
-
+// Load projects from localStorage
+state.allProjects = Storage.load();
+if (state.allProjects.length === 0) {
+  let defaultProject = createProject("", "");
+  let defaultTodo = createTodo("", "example project", "", "", false);
+  defaultProject.addTodo(defaultTodo);
+  state.allProjects.push(defaultProject);
+  Storage.save(state.allProjects);
+}
 console.log("all projects in index");
 
 //popUpProject
@@ -45,6 +53,13 @@ weeklyButton.addEventListener("click", showWeeklyTodos);
 const allButton = document.querySelector("#all");
 allButton.addEventListener("click", displayAllTodos);
 
+//ze button
+
+const zeButton = document.querySelector("#delProject");
+zeButton.addEventListener("click", deleteProject);
+
+
 // default load up
 const defPro = document.querySelector("#projectContainer div");
 defPro.click();
+

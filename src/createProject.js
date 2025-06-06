@@ -18,14 +18,15 @@ class Project {
   add(obj) {
     this.items.push(obj);
   }
+  toJSON(){
+    return {
+      title: this.title,desc: this.desc,id: this.id,
+     todos: this.items.map(item => item.toJSON())
+    };
+  }
 }
 
-function createProject(title, desc) {
-  let newProject = new Project(title, desc);
-  addProject(newProject);
-  state.allProjects.push(newProject);
-  return newProject;
-}
+
 
 function projectShower(project) {
   console.log(`Project Title => ${project.title}`);
@@ -34,6 +35,12 @@ function projectShower(project) {
   for (const item of project.items) {
     console.log(item.title);
   }
+}
+function createProject(title, desc) {
+  let newProject = new Project(title, desc);
+  state.allProjects.push(newProject);
+  addProject(newProject);
+  return newProject;
 }
 
 export { createProject };

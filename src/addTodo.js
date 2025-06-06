@@ -1,5 +1,6 @@
 import { state } from "./projectHandler.js";
 import { editTodo } from "./popTodo.js"; // Import editTodo
+import { Storage } from "./localStorage.js";
 
 const content = document.querySelector("#content");
 const overlay = document.querySelector("#overlay");
@@ -9,7 +10,7 @@ function addTodo(todo, pushToItems = true) {
       console.error("No valid project selected.");
       return;
     }
-    state.currentProject.items.push(todo);
+    state.currentProject.add(todo);
   }
 
   console.log("adding todo to dom");
@@ -91,6 +92,7 @@ function addTodo(todo, pushToItems = true) {
     if (!opts.classList.contains("disabled")) {
       // Check if opts is enabled
       deleteTodo(todo, contain);
+      Storage.save(state.allProjects);
     }
   });
 

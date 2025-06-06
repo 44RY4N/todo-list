@@ -1,2 +1,2 @@
-const state = { currentProject: "null", allProjects: [] };
+const state = { currentProject: null, allProjects: [] };
 export { state };

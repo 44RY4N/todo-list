@@ -1,4 +1,6 @@
 import { addTodo } from "./addTodo";
+import {Storage} from "./localStorage.js";
+import {state} from "./projectHandler.js"
 class Todo {
   static copy = 1;
   static id = 1;
@@ -13,11 +15,17 @@ class Todo {
   showTodo() {
     todoShower(this);
   }
+  toJSON(){
+    return {
+      title: this.title,description: this.description,duedate: this.duedate,priority: this.priority,checked:this.checked,id:this.id
+    }
+  }
 }
 
 function createTodo(title, description, duedate, priority, checked) {
   let newTodo = new Todo(title, description, duedate, priority, checked);
   addTodo(newTodo);
+  Storage.save(state.allProjects);
   return newTodo;
 }
 

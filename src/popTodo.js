@@ -1,7 +1,7 @@
 import { createTodo } from "./createTodo.js";
 import { deleteTodo } from "./addTodo.js";
 import { state } from "./projectHandler.js";
-
+import { Storage } from "./localStorage.js";
 const overlay = document.querySelector("#overlay");
 const popTo = document.createElement("div");
 
@@ -59,6 +59,7 @@ createButton.addEventListener("click", () => {
     console.log("Old todo element:", oldTodoElement);
     if (oldTodo && oldTodoElement) {
       deleteTodo(oldTodo, oldTodoElement);
+      Storage.save(state.allProjects);
     } else {
       console.error("Failed to find old todo or element for deletion:", {
         oldTodo,
